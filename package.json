@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Ecommerse website for gadgets developing using MERN stack",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,8 @@
   "homepage": "https://github.com/selmanfariz18/Gadget-store-MERN#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "express": "^4.19.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.3"
   }
 }
