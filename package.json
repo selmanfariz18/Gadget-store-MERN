@@ -1,0 +1,24 @@
+{
+  "name": "gadget-store-mern",
+  "version": "1.0.0",
+  "description": "Ecommerse website for gadgets developing using MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selmanfariz18/Gadget-store-MERN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selmanfariz18/Gadget-store-MERN/issues"
+  },
+  "homepage": "https://github.com/selmanfariz18/Gadget-store-MERN#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.19.2"
+  }
+}
