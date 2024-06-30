@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import { MdShoppingCart } from "react-icons/md";
 
 const Header = () => {
   return (
@@ -20,6 +21,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Link to="/" className="navbar-brand">
+              <MdShoppingCart />
               Gadget-Store
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
