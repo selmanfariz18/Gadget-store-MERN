@@ -6,34 +6,34 @@ import JWT from "jsonwebtoken";
 export const registerController = async (req, res) => {
   try {
     const { name, email, password, phone, address } = req.body;
-    //validation
+    // validation
     if (!name) {
-      return res.send({ error: "Name is required" });
+      return res.send({ message: "Name is required" });
     }
     if (!email) {
-      return res.send({ error: "email is required" });
+      return res.send({ message: "email is required" });
     }
     if (!password) {
-      return res.send({ error: "password is required" });
+      return res.send({ message: "password is required" });
     }
     if (!phone) {
-      return res.send({ error: "phone is required" });
+      return res.send({ message: "phone is required" });
     }
     if (!address) {
-      return res.send({ error: "address is required" });
+      return res.send({ message: "address is required" });
     }
-    //check user
+    // check user
     const exsistingUser = await userModel.findOne({ email });
-    //existing user
+    // existing user
     if (exsistingUser) {
       return res.status(200).send({
-        success: true,
+        success: false,
         message: "Already Registered",
       });
     }
-    //register user
+    // register user
     const hashedPassword = await hashPassword(password);
-    //save
+    // save
     const user = await new userModel({
       name,
       email,
@@ -42,11 +42,13 @@ export const registerController = async (req, res) => {
       password: hashedPassword,
     }).save();
 
-    res.status(201).send({
-      success: true,
-      message: "User Register successfully",
-      user,
-    });
+    setTimeout(() => {
+      res.status(201).send({
+        success: true,
+        message: "User Register successfully",
+        user,
+      });
+    }); // 3000 milliseconds = 3 seconds
   } catch (error) {
     console.log(error);
     res.status(500).send({
